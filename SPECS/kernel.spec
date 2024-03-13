@@ -14,7 +14,7 @@ License: GPL
 Group: System Environment/Kernel
 Vendor: The Linux Community
 URL: https://www.kernel.org
-Source0: linux-${KERNELRELEASE}.tar.xz
+Source0: linux-%{KERNELRELEASE}.tar.xz
 Source1: kernel.x86_64.config
 Source2: bpf_doc.patch
 Provides: kernel-%{KERNELRELEASE}
@@ -28,7 +28,6 @@ The Linux Kernel, the operating system core itself
 %package headers
 Summary: Header files for the Linux kernel for use by glibc
 Group: Development/System
-Obsoletes: kernel-headers
 Provides: kernel-headers = %{version}
 %description headers
 Kernel-headers includes the C header files that specify the interface
