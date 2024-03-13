@@ -1,0 +1,11 @@
+--- a/scripts/bpf_doc.py	2024-03-05 17:24:58.067562880 +0000
++++ a/scripts/bpf_doc.py    2024-03-05 17:23:18.117562827 +0000
+@@ -414,7 +414,7 @@
+             version = version.stdout.decode().rstrip()
+         except:
+             try:
+-                version = subprocess.run(['make', 'kernelversion'], cwd=linuxRoot,
++                version = subprocess.run(['make', '-s' ,'kernelversion'], cwd=linuxRoot,
+                                          capture_output=True, check=True)
+                 version = version.stdout.decode().rstrip()
+             except:
