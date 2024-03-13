@@ -14,8 +14,8 @@ License: GPL
 Group: System Environment/Kernel
 Vendor: The Linux Community
 URL: https://www.kernel.org
-Source0: linux-6.6.18-100.18.1.mewl1_0.tar.xz
-Source1: kernel-6.6.18-mewl1_0.x86_64.config
+Source0: linux-${KERNELRELEASE}.tar.xz
+Source1: kernel.x86_64.config
 Source2: bpf_doc.patch
 Provides: kernel-%{KERNELRELEASE}
 BuildRequires: bc binutils bison dwarves
@@ -48,7 +48,7 @@ against the %{version} kernel package.
 %endif
 
 %prep
-%setup -q -n linux-6.6.18
+%setup -q -n linux-%{KERNELRELEASE}
 cp %{SOURCE1} .config
 patch -p1 < %{SOURCE2}
 
